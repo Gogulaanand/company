@@ -22,11 +22,14 @@ function Contact(props){
   const handleSubmit = (e) => {
     e.preventDefault()
     let templateParams = {
-      from_name: email,
-      to_name: 'Bell',
-      subject: `${name} contacting from Company website`,
-      message_html: `${comments}
-                     Phone: ${phone}`
+      from_name: email.split('@')[0],
+      to_name: 'Company',
+      message_html: `<table>
+                      <tr><th>Subject</th><td>${name} contacting from Company website</td></tr>
+                      <tr><th>Message</th><td>${comments}</td></tr>
+                      <tr><th>Phone</th><td>${phone}</td></tr>
+                      <tr><th>Email</th><td>${email}</td></tr>`
+
     }
     setName('')
     setEmail('')
@@ -34,9 +37,9 @@ function Contact(props){
     setComments('')
     emailjs.send(
       'gmail', 
-      'template_luOZdH2O',
+      process.env.REACT_APP_EMAILJS_TEMPLATE_ID,
       templateParams,
-      'user_5Vl91CUzguX2jndTfJfYE'
+      process.env.REACT_APP_EMAILJS_USER_ID
     )
   }
 
@@ -62,7 +65,7 @@ function Contact(props){
             <Input.TextArea placeholder='Tell us what you are looking for !' onChange={e => setComments(e.target.value)} />
           </Form.Item>
           <Form.Item wrapperCol={{ ...layout.wrapperCol, offset:4 }}>
-            <Button type='primary' htmlType='submit'>
+            <Button type='primary' htmlType='submit' onClick={handleSubmit}>
               Submit
             </Button>
           </Form.Item>
