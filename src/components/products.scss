@@ -6,8 +6,15 @@
   justify-content: space-around;
 }
 .displayImg{
-  margin-left: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 20px;
 }
-// #product-desc{
-//   margin-left: 100px;
-// }
+.displayDesc{
+  width: 40%;
+}
+.leftArrow, .rightArrow{
+  margin: auto;
+  font-size: 20px;
+}
