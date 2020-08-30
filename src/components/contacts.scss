@@ -1,14 +1,19 @@
 #contact{
   margin-top: 100px;
   display: flex;
+  margin-bottom: 200px;
 }
 #contact-leftPane{
-  width: 50%;
+  width: 40%;
   margin: auto;
-  padding-left: 400px;
 }
 #contact-rightPane{
-  width: 50%;
+  width: 40%;
   margin: auto;
   margin-top: 30px;
+}
+#contact-img{
+  width: 20%;
+  max-width: 200px;
+  margin-right: 100px;
 }

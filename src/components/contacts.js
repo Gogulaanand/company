@@ -1,7 +1,9 @@
 import React, { useState } from 'react'
 import { Form, Input, Button, Divider } from 'antd'
-import './contacts.scss'
 import emailjs from 'emailjs-com'
+import './contacts.scss'
+import conversation from './assets/contact.svg'
+
 
 function Contact(props){
 
@@ -15,7 +17,7 @@ function Contact(props){
       span: 4,
     },
     wrapperCol: {
-      span: 8,
+      span: 12,
     },
   };
 
@@ -80,6 +82,7 @@ function Contact(props){
           </Form.Item>
         </Form>
       </div>
+      <img src={conversation} alt='send us an email illustration' id='contact-img'/>
     </div>
   )
 }

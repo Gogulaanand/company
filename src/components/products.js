@@ -1,8 +1,8 @@
 import React, { useState } from 'react'
 import  { Carousel } from 'antd'
 import './products.scss'
-import { ArrowRightOutlined, ArrowLeftOutlined }  from '@ant-design/icons'
-import whiteFlower from './whiteFlowers.jpg'
+import { LeftOutlined, RightOutlined }  from '@ant-design/icons'
+import whiteFlower from './assets/whiteFlowers.jpg'
 // import Slider from 'react-slick'
 
 function Products(props){
@@ -11,6 +11,8 @@ function Products(props){
 
   const carouselContentStyle = {
     height: '560px',
+    width: '80vw',
+    margin: 'auto',
     color: '#fff',
     lineHeight: '560px',
     textAlign: 'center',
@@ -21,6 +23,7 @@ function Products(props){
     dots: true,
     infinite: true,
     speed: 1000,
+    width: '80vw',
     slidesToShow: 1,
     slidesToScroll: 1
   }
@@ -43,34 +46,23 @@ function Products(props){
 
   return(
     <div id='products'>
+    <LeftOutlined onClick={prevImg} className='leftArrow'/>
     <Carousel {...settings} id='carousel' ref={c => (setSlider(c))} >
       <div>
         <div style={carouselContentStyle} className='displayItem'>
-          <ArrowLeftOutlined onClick={prevImg} className='leftArrow'/>
           <div className='displayImg'><img style={imgContentStyle} src={whiteFlower} alt='white flower'/></div>
           <div className='displayDesc'>Lorem ipsum dolor sit amet, consectetur adipiscing elit. </div>
-          <ArrowRightOutlined onClick={nextImg} className='rightArrow'/>
         </div>
       </div>
       <div>
-        <h3 style={carouselContentStyle}>1</h3>
+        <div style={carouselContentStyle} className='displayItem'>
+          <div className='displayImg'><img style={imgContentStyle} src={whiteFlower} alt='white flower'/></div>
+          <div className='displayDesc'>Lorem ipsum dolor sit amet, consectetur adipiscing elit. </div>
+        </div>
       </div>
-
-      <div>
-        <h3 style={carouselContentStyle}>2</h3>
-      </div>
-
-      <div>
-        <h3 style={carouselContentStyle}>3</h3>
-      </div>
-
-      <div>
-        <h3 style={carouselContentStyle}>4</h3>
-      </div>
-      <div>
-        <h3 style={carouselContentStyle}>5</h3>
-      </div>
+      
     </Carousel>
+    <RightOutlined onClick={nextImg} className='rightArrow'/>
     </div>
   )
 }
