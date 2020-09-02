@@ -1,0 +1,22 @@
+#navbar{
+  float: right;
+  margin-bottom: 50px;
+}
+#navlink{
+  color: #000
+}
+header{
+  height: 20vh;
+  margin-top: 20px;
+  display: flex;
+  justify-content: space-between;
+  a{
+    font-size: 18px;
+  }
+  #logo{
+    font-size: 28px;
+    font-weight: bold;
+    float: left;
+    margin-left: 5vw;
+  }
+}

@@ -1,12 +1,18 @@
 import React from 'react'
+import welcome from './assets/welcome.png'
+import './home.scss'
 
 function Home(props){
   return(
     <div id="home">
-    <h1>Hi There!</h1>
-    <p>We have are happy to have you here!</p>
-    <p>We are a garment and textile manufacturing company with more than 20 years of expertise.</p>
-    <p> We have been exporting to countries like Nigeria, Sri Lanka and multiple locations within India</p>
+      <div id="homeDescription">
+        <h1>Quality Products.<br/>At Affordable prices.</h1>
+        <h3>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ut nulla elementum, vehicula lectus ac, elementum odio. Donec ullamcorper imperdiet bibendum. Suspendisse nec vehicula erat. Nullam feugiat iaculis aliquam. Vestibulum sit amet vehicula magna, ut condimentum velit.</h3>
+        <a href='#products'>check out  -> </a>
+      </div>
+      <div id='homeLogo'>
+        <img src={welcome} alt="welcomeLogo" id="welcomeImg"/>
+      </div>
     </div>
   )
 }

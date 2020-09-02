@@ -4,24 +4,34 @@ import './header.scss'
 import { Nav, NavLink, NavItem } from 'shards-react'
 
 function Header(){
+
+  const navlinkStyle = {
+    'margin-left': '20px',
+    'font-weight': '300',
+    color: '#000',
+    height: '30px'   
+  }
   return(
-    <Nav>
-      <NavItem>
-        <NavLink active href='#home'>
-          Home
-        </NavLink>
-      </NavItem>
-      <NavItem>
-        <NavLink active href='#products'>
-          Products
-        </NavLink>
-      </NavItem>
-      <NavItem>
-        <NavLink active href='#contact'>
-          Contact
-        </NavLink>
-      </NavItem>
-    </Nav>
+    <header>
+      <a id='logo' href='/'>COMPANY</a>
+      <Nav id='navbar'>
+        <NavItem>
+          <NavLink active href='#home' style={navlinkStyle}>
+            Home
+          </NavLink>
+        </NavItem>
+        <NavItem>
+          <NavLink active href='#products' style={navlinkStyle}>
+            Products
+          </NavLink>
+        </NavItem>
+        <NavItem>
+          <NavLink active href='#contact' style={navlinkStyle}>
+            Contact
+          </NavLink>
+        </NavItem>
+      </Nav>
+    </header>
   )
 }
 

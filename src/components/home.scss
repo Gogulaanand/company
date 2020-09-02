@@ -1,0 +1,30 @@
+#home{
+  height: 100vh;
+  max-width: 90vw;
+  margin: auto;
+  display: flex;
+  justify-content: space-around;
+}
+#homeDescription{
+  margin-left: 10vw;
+  max-width: 50vw;
+  text-align: center;
+  margin: auto;
+  padding-bottom: 10vh;
+  h1{
+    line-height: 5rem;
+    text-align: right;
+  }
+  h3{
+    margin-top: 10vh;
+    overflow-wrap: break-word;
+    vertical-align: middle;
+    line-height: 3rem;
+  }
+}
+#homeLogo{
+  max-width: 40vw;
+
+}
+
+
