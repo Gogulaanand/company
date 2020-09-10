@@ -3,7 +3,8 @@ import { Form, Input, Button, Divider } from 'antd'
 import emailjs from 'emailjs-com'
 import './contacts.scss'
 import conversation from './assets/contact.svg'
-
+import { ToastContainer, toast } from 'react-toastify'
+import 'react-toastify/dist/ReactToastify.css'
 
 function Contact(props){
 
@@ -26,6 +27,16 @@ function Contact(props){
     height: '300px'
   }
 
+  const toastStyle = {
+    position: "top-right",
+    autoClose: 5000,
+    hideProgressBar: false,
+    closeOnClick: true,
+    pauseOnHover: true,
+    draggable: true,
+    progress: undefined,
+    }
+
   const handleSubmit = (e) => {
     e.preventDefault()
     let templateParams = {
@@ -38,19 +49,24 @@ function Contact(props){
                       <tr><th>Email</th><td>${email}</td></tr>`
 
     }
-    resetForm()
     emailjs.send(
       'gmail', 
       process.env.REACT_APP_EMAILJS_TEMPLATE_ID,
       templateParams,
       process.env.REACT_APP_EMAILJS_USER_ID
-    )
-  }
+    ).then((resp) => {
+      console.log(resp)
+      if(resp.status===200){
+        toast.success('🚀Message sent successfully!!', toastStyle)
+      }
+    }).catch(e => {
+      console.log(e)
+      toast.error("👻Something went wrong, pls try after sometime!", toastStyle);
+    })
 
-  function resetForm(){
-    setName('')
     setEmail('')
-    setPhone(0)
+    setName('')
+    setPhone(null)
     setComments('')
   }
 
@@ -62,7 +78,7 @@ function Contact(props){
       </div>
       <Divider type="vertical" id="contact-divider" style={dividerStyle}/>
       <div id='contact-rightPane'>
-        <Form {...layout} name='nest-messages' onSubmit={handleSubmit}>
+        <Form {...layout} name='nest-messages' onSubmit={handleSubmit} id='contact-form'>
           <Form.Item label='Name' name={['user', 'name']}>
             <Input placeholder='Name' value={name} onChange={e => setName(e.target.value)}/>
           </Form.Item>
@@ -79,6 +95,7 @@ function Contact(props){
             <Button type='primary' htmlType='submit' onClick={handleSubmit}>
               Submit
             </Button>
+            <ToastContainer/>
           </Form.Item>
         </Form>
       </div>

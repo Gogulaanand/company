@@ -18,5 +18,10 @@ header{
     font-weight: bold;
     float: left;
     margin-left: 5vw;
+    text-decoration: none;
+    color: #003CA8;
+    :hover{
+      color: inherit;
+    }
   }
 }
