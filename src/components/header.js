@@ -6,8 +6,8 @@ import { Nav, NavLink, NavItem } from 'shards-react'
 function Header(){
 
   const navlinkStyle = {
-    'margin-left': '20px',
-    'font-weight': '300',
+    'marginLeft': '20px',
+    'fontWeight': '300',
     color: '#000',
     height: '30px'   
   }
