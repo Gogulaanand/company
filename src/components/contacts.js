@@ -1,10 +1,8 @@
 import React, { useState, useEffect } from 'react'
-import { Form, Input, Button, Divider } from 'antd'
+import { Form, Input, Button, Divider, notification } from 'antd'
 import emailjs from 'emailjs-com'
 import './contacts.scss'
 import conversation from './assets/contact.svg'
-import { ToastContainer, toast } from 'react-toastify'
-import 'react-toastify/dist/ReactToastify.css'
 
 function Contact(props){
 
@@ -27,16 +25,6 @@ function Contact(props){
     border: '1px solid #dddddd',
     height: '300px'
   }
-
-  const toastStyle = {
-    position: "top-right",
-    autoClose: 5000,
-    hideProgressBar: false,
-    closeOnClick: true,
-    pauseOnHover: true,
-    draggable: true,
-    progress: undefined,
-    }
 
   const handleChange = (e) => {
     const { name, value } = e.target
@@ -66,14 +54,21 @@ function Contact(props){
       process.env.REACT_APP_EMAILJS_USER_ID
     ).then((resp) => {
       if(resp.status===200){
-        toast.success('🚀Message sent successfully!!', toastStyle)
+        notification.open({
+          message: 'Message sent successfully!',
+          description: 'We will get you back to you shortly',
+          icon: '🚀'
+        })
         //reset form status
         formRef.resetFields()
         setLoading(false)
       }
     }).catch(e => {
       console.log(e)
-      toast.error("👻Something went wrong, pls try after sometime!", toastStyle);
+      notification.open({
+        message: 'Something went wrong, pls try after sometime!',
+        icon: '👻'
+      })
     })
   }
 
@@ -103,7 +98,6 @@ function Contact(props){
             <Button type='primary' htmlType='submit' loading={submitLoading} id='form-submitButton'>
               Submit
             </Button>
-            <ToastContainer/>
           </Form.Item>
         </Form>
       </div>

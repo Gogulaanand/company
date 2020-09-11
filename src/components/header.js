@@ -1,36 +1,36 @@
-import React from 'react'
+import React, { useState } from 'react'
 // import { Link } from 'react-router-dom'
 import './header.scss'
-import { Nav, NavLink, NavItem } from 'shards-react'
+import { Menu } from 'antd'
 
 function Header(){
 
-  const navlinkStyle = {
-    'marginLeft': '20px',
-    'fontWeight': '300',
-    color: '#000',
-    height: '30px'   
+  const [current, setCurrent] = useState('home')
+
+  const handleClick = (e) => {
+    setCurrent(e.key)
   }
+
+  const navlinkStyle = {
+    textDecoration: 'none'
+  }
+
   return(
     <header>
-      <a id='logo' href='/'>COMPANY</a>
-      <Nav id='navbar'>
-        <NavItem>
-          <NavLink active href='#home' style={navlinkStyle}>
-            Home
-          </NavLink>
-        </NavItem>
-        <NavItem>
-          <NavLink active href='#products' style={navlinkStyle}>
-            Products
-          </NavLink>
-        </NavItem>
-        <NavItem>
-          <NavLink active href='#contact' style={navlinkStyle}>
-            Contact
-          </NavLink>
-        </NavItem>
-      </Nav>
+      <Menu onClick={handleClick} selectedKeys={[current]} mode="horizontal" style={{display: 'flex'}}>
+        <Menu.Item>
+          <a id='logo' href='/'>COMPANY</a>
+        </Menu.Item>
+        <Menu.Item key='home' style={{marginLeft: '65vw'}}>
+          <a href="#home" style={navlinkStyle}>Home</a>
+        </Menu.Item>
+        <Menu.Item key='products'>
+          <a href="#products" style={navlinkStyle}>Products</a>
+        </Menu.Item>
+        <Menu.Item key='contact'>
+          <a href="#contact" style={navlinkStyle}>Contact</a>
+        </Menu.Item>
+      </Menu>
     </header>
   )
 }
