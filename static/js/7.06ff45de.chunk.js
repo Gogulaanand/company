@@ -1,0 +1,2 @@
+(this.webpackJsonpcatalogue=this.webpackJsonpcatalogue||[]).push([[7],{290:function(e,t,a){"use strict";a.r(t);var n=a(0),r=a.n(n),l=a(74),c=a(42);l.b.Sider=c.b;var o=l.b;t.default=function(){var e=o.Footer;return r.a.createElement(r.a.Fragment,null,r.a.createElement(e,{style:{textAlign:"center",fontSize:"16px"}},"Company \xa92020",r.a.createElement("br",null),"Created by Company with \u2764"))}}}]);
+//# sourceMappingURL=7.06ff45de.chunk.js.map
