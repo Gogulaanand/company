@@ -47,7 +47,7 @@ function Products(props){
   return(
     <div id='products'>
     <LeftOutlined onClick={prevImg} className='leftArrow'/>
-    <Carousel {...settings} id='carousel' ref={c => (setSlider(c))} >
+    <Carousel {...settings} autoplay id='carousel' ref={c => (setSlider(c))} >
       <div>
         <div style={carouselContentStyle} className='displayItem'>
           <div className='displayImg'><img style={imgContentStyle} src={whiteFlower} alt='white flower'/></div>

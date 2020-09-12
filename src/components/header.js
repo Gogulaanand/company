@@ -1,5 +1,4 @@
 import React, { useState } from 'react'
-// import { Link } from 'react-router-dom'
 import './header.scss'
 import { Menu } from 'antd'
 
@@ -17,11 +16,9 @@ function Header(){
 
   return(
     <header>
-      <Menu onClick={handleClick} selectedKeys={[current]} mode="horizontal" style={{display: 'flex'}}>
-        <Menu.Item>
-          <a id='logo' href='/'>COMPANY</a>
-        </Menu.Item>
-        <Menu.Item key='home' style={{marginLeft: '65vw'}}>
+    <a id='logo' href='/'>COMPANY</a>
+      <Menu onClick={handleClick} selectedKeys={[current]} mode="horizontal">
+        <Menu.Item key='home'>
           <a href="#home" style={navlinkStyle}>Home</a>
         </Menu.Item>
         <Menu.Item key='products'>

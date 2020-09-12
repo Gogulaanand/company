@@ -1,9 +1,4 @@
-#navbar{
-  float: right;
-  margin-bottom: 3.125rem;
-}
 header{
-  height: 20vh;
   margin-top: 1.25rem;
   display: flex;
   justify-content: space-between;
@@ -14,7 +9,7 @@ header{
     font-size: 1.75rem;
     font-weight: bold;
     float: left;
-    margin-left: 5vw;
+    margin: 0 5vw 0 5vw;
     text-decoration: none;
     color: #003CA8;
     :hover{
