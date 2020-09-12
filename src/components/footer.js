@@ -5,7 +5,8 @@ function Footer(){
   const { Footer } = Layout
 
   const footerStyle = {
-    textAlign: 'center'
+    textAlign: 'center',
+    fontSize: '16px'
   }
   return(
     <>

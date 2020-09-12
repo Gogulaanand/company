@@ -2,8 +2,7 @@ import React, { useState } from 'react'
 import  { Carousel } from 'antd'
 import './products.scss'
 import { LeftOutlined, RightOutlined }  from '@ant-design/icons'
-import whiteFlower from './assets/whiteFlowers.jpg'
-// import Slider from 'react-slick'
+import whiteFlower from './assets/whiteFlowers.webp'
 
 function Products(props){
 

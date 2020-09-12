@@ -1,11 +1,9 @@
 header{
   margin-top: 1.25rem;
-  display: flex;
-  justify-content: space-between;
   a{
     font-size: 1.125rem;
   }
-  #logo{
+  #companyLogo{
     font-size: 1.75rem;
     font-weight: bold;
     float: left;
@@ -15,5 +13,14 @@ header{
     :hover{
       color: inherit;
     }
+  }
+}
+@media (max-width: 961px){
+  #navMenu{
+    display: none;
+  }
+  header{
+    display: flex;
+    justify-content: center;
   }
 }

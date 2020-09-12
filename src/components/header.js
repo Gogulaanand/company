@@ -16,8 +16,8 @@ function Header(){
 
   return(
     <header>
-    <a id='logo' href='/'>COMPANY</a>
-      <Menu onClick={handleClick} selectedKeys={[current]} mode="horizontal">
+      <a id='companyLogo' href='/company'>COMPANY</a>
+      <Menu onClick={handleClick} selectedKeys={[current]} mode="horizontal" id='navMenu'>
         <Menu.Item key='home'>
           <a href="#home" style={navlinkStyle}>Home</a>
         </Menu.Item>

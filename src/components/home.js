@@ -1,5 +1,5 @@
 import React from 'react'
-import welcome from './assets/welcome.png'
+import welcome from './assets/welcome.webp'
 import './home.scss'
 import { DownCircleTwoTone } from '@ant-design/icons'
 

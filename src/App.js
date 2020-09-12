@@ -1,20 +1,30 @@
-import React from 'react';
+import React, { lazy, Suspense} from 'react';
 import './App.css';
 import Home from './components/home'
 import Header from './components/header'
-import Products from './components/products'
-import Contact from './components/contacts'
-import Footer from './components/footer'
-import { BackTop, Tooltip } from 'antd'
+import { BackTop, Tooltip, Spin } from 'antd'
+
+const Products = lazy(() => import('./components/products'))
+const Contact = lazy(() => import('./components/contacts'))
+const Footer = lazy(() => import('./components/footer'))
+const renderLoader = () => <Spin/>
 
 function App() {
+
+
   return (
     <div className="App">
       <Header/>
       <Home/>
-      <Products/>
-      <Contact/>
-      <Footer/>
+      <Suspense fallback={renderLoader()}>
+        <Products/>
+      </Suspense>
+      <Suspense fallback={renderLoader()}>
+        <Contact/>
+      </Suspense>
+      <Suspense fallback={renderLoader()}>
+        <Footer/>
+      </Suspense>
       <Tooltip title='Go back to top'>
         <BackTop/>
       </Tooltip>

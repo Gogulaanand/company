@@ -4,28 +4,44 @@
   margin: 10vh auto auto auto;
   display: flex;
   justify-content: space-around;
-  #homeDescription{
-    margin-left: 10vw;
-    max-width: 50vw;
-    text-align: center;
-    margin: auto;
-    padding-bottom: 10vh;
-    h1{
-      line-height: 5rem;
-      text-align: right;
-    }
-    h3{
-      margin-top: 10vh;
-      overflow-wrap: break-word;
-      vertical-align: middle;
-      line-height: 3rem;
-    }
-    #checkOut{
-      text-decoration: none;  
-    }
+  font-size: 30px;
+}
+#homeDescription{
+  margin-left: 10vw;
+  max-width: 50vw;
+  text-align: center;
+  margin: auto;
+  padding-bottom: 10vh;
+  h1{
+    text-align: right;
+    line-height: 5rem;
+    font-size: 3rem;
   }
-  #homeLogo{
-    max-width: 40vw;
+  h3{
+    margin-top: 10vh;
+    overflow-wrap: break-word;
+    vertical-align: middle;
+    line-height: 2.5rem;
+    font-size: 1.5rem;
+  }
+}
+#homeLogo{
+  max-width: 40vw;
+}
+#checkOut{
+  font-size: 1.25rem;
+  text-decoration: none;  
+}
+
+@media (max-width: 961px){
+  #home{
+    font-size: 20px;
+  }
+}
+
+@media (min-width: 320px){
+  #home{
+    font-size: 15px;
   }
 }
 
